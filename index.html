@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioCampo Hub - Inteligência Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h2>BioCampo 🌾</h2>
+                <span>Escola do Campo</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#dashboard" class="active">📊 Painel Geral</a>
+                <a href="#simulador">⚙️ Novo Diagnóstico</a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Agrinho 2026</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-title">
+                    <h1>Painel de Monitoramento Agroecológico</h1>
+                    <p>Equilíbrio perfeito entre alta produtividade e preservação ambiental</p>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <section id="simulador-section" class="dashboard-card animate-fade">
+                    <h3>🛠️ Iniciar Novo Diagnóstico da Propriedade</h3>
+                    <p class="section-desc">Insira os dados da lavoura comunitária para calcular o índice ecológico real.</p>
+                    
+                    <form id="agro-form">
+                        <div class="input-grid">
+                            <div class="form-control">
+                                <label for="produtor">Nome do Produtor / Sítio</label>
+                                <input type="text" id="produtor" required placeholder="Ex: Sítio Oliveira">
+                            </div>
+                            <div class="form-control">
+                                <label for="hectares">Área Total (Hectares)</label>
+                                <input type="number" id="hectares" min="1" required placeholder="Ex: 25">
+                            </div>
+                        </div>
+
+                        <div class="form-control">
+                            <label>Selecione o Manejo Atual da Lavouras</label>
+                            <div class="radio-card-grid">
+                                <label class="radio-card">
+                                    <input type="radio" name="manejo" value="alto" required>
+                                    <div class="radio-content">
+                                        <span class="emoji">🌱</span>
+                                        <h4>Manejo Regenerativo</h4>
+                                        <p>Rotação de culturas, adubação verde e zero defensivos químicos pesados.</p>
+                                    </div>
+                                </label>
+
+                                <label class="radio-card">
+                                    <input type="radio" name="manejo" value="medio">
+                                    <div class="radio-content">
+                                        <span class="emoji">🚜</span>
+                                        <h4>Manejo Integrado</h4>
+                                        <p>Uso misto de controle biológico com manejo convencional controlado.</p>
+                                    </div>
+                                </label>
+
+                                <label class="radio-card">
+                                    <input type="radio" name="manejo" value="baixo">
+                                    <div class="radio-content">
+                                        <span class="emoji">⚠️</span>
+                                        <h4>Manejo Intensivo</h4>
+                                        <p>Monocultura contínua com alta dependência de insumos químicos.</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Gerar Relatório Inteligente →</button>
+                    </form>
+                </section>
+
+                <section id="resultado-section" class="dashboard-card animate-fade hidden">
+                    <div class="result-header">
+                        <h3>📊 Relatório de Impacto Ambiental</h3>
+                        <button id="btn-voltar" class="btn-secondary">← Novo Teste</button>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="metric-card main-metric">
+                            <h4>Índice de Sustentabilidade</h4>
+                            <div class="progress-circle-placeholder">
+                                <span id="txt-porcentagem">0%</span>
+                            </div>
+                            <p id="txt-status" class="status-badge">Analisando...</p>
+                        </div>
+
+                        <div class="metric-card info-metric">
+                            <h4>Diagnóstico da Escola do Campo</h4>
+                            <p id="txt-diagnostico">Carregando dados da lavoura...</p>
+                            <div class="recomenda-box">
+                                <h5>💡 Recomendação Técnica dos Alunos:</h5>
+                                <p id="txt-recomendacao">Aguardando análise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
